@@ -32,12 +32,11 @@ public class Main {
 
 	public static Policy callTheRightPolicy(String policy) {
 		if (policy.equals("BEST-FIT")) {
-			new BestFit();
+			return new bestFit();
 		} else if (policy.equals("WORST-FIT")) {
-			new WorstFit();
+			return new worstFit();
 		} else {
-			new FirstFit();
-			;
+			return new firstFit();
 		}
 	}
 }

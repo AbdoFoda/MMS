@@ -3,11 +3,11 @@ public class Partition {
 	private int startAddress;
 	private int partitionSize;
 	private int reservedSize;
-	private boolean partitionStatus;
+	private boolean empty;
 
 	public Partition() {
 		startAddress = partitionSize = reservedSize = 0;
-		partitionStatus = false;
+		empty = true;
 	}
 
 	public int getStartAddress() {
@@ -34,12 +34,12 @@ public class Partition {
 		this.reservedSize = reservedSize;
 	}
 
-	public boolean isPartitionStatus() {
-		return partitionStatus;
+	public boolean isEmpty() {
+		return empty;
 	}
 
 	public void setPartitionStatus(boolean partitionStatus) {
-		this.partitionStatus = partitionStatus;
+		this.empty = partitionStatus;
 	}
 
 }
