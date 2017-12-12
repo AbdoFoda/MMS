@@ -26,9 +26,15 @@ public class MMS {
 	public static void defragment(int caseNumber) {
 		switch (caseNumber) {
 		case 1:
-			
+			new InternalDefragmentation().eliminatingFragmentation();
 			break;
-
+		case 2:
+			new ContiguousExternalDefragmentation().eliminatingFragmentation();
+		case 3:
+			new NonContiguousExternalDefragmentation().eliminatingFragmentation();
+		default:
+			System.out.println("Undefined Operation");
+			break;
 		}
 
 	}
