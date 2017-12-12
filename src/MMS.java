@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class MMS {
-	public ArrayList<Partition> memory;
+	public static ArrayList<Partition> memory;
 
 	public MMS() {
 		memory = new ArrayList<Partition>();
@@ -14,8 +14,9 @@ public class MMS {
 		wholeMemory.setStartAddress(0);
 	}
 
-	public static boolean allocate(Policy wantedPolicy, int sizeOfNeddedMomory) {
-		return true;
+	public static Integer allocate(Policy wantedPolicy, int sizeOfNeddedMomory) {
+		Integer ret = wantedPolicy.selectIndex(sizeOfNeddedMomory);
+		return ret;
 	}
 
 	public static boolean deallocate(int startedAddress) {
@@ -23,6 +24,12 @@ public class MMS {
 	}
 
 	public static void defragment(int caseNumber) {
+		switch (caseNumber) {
+		case 1:
+			
+			break;
+
+		}
 
 	}
 
