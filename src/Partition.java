@@ -10,6 +10,13 @@ public class Partition {
 		empty = true;
 	}
 
+	public Partition(int start, int t_size, int reserved) {
+		startAddress = start;
+		partitionSize = t_size;
+		reservedSize = reserved;
+		empty=true;
+	}
+
 	public int getStartAddress() {
 		return startAddress;
 	}
