@@ -13,9 +13,9 @@ public class MMS {
 		memory.add(wholeMemory);
 	}
 
-	public static boolean allocate(Policy wantedPolicy, int sizeOfNeddedMomory) {
-
-		return true;
+	public static Integer allocate(Policy wantedPolicy, int sizeOfNeddedMomory) {
+		Integer ret = wantedPolicy.selectIndex(sizeOfNeddedMomory);
+		return ret;
 	}
 
 	public static boolean deallocate(int startingAddress) {
@@ -30,6 +30,18 @@ public class MMS {
 	}
 
 	public static void defragment(int caseNumber) {
+		switch (caseNumber) {
+		case 1:
+			new InternalDefragmentation().eliminatingFragmentation();
+			break;
+		case 2:
+			new ContiguousExternalDefragmentation().eliminatingFragmentation();
+		case 3:
+			new NonContiguousExternalDefragmentation().eliminatingFragmentation();
+		default:
+			System.out.println("Undefined Operation");
+			break;
+		}
 
 	}
 

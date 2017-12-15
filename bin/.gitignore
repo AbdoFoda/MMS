@@ -1,6 +1,9 @@
+<<<<<<< HEAD
 /GUI$1.class
 /GUI$2.class
 /GUI.class
+=======
+>>>>>>> 9d9a9f9882bb14de2833aea87ef9056081d4b4ae
 /MMS.class
 /Main.class
 /Partition.class
@@ -8,3 +11,11 @@
 /bestFit.class
 /firstFit.class
 /worstFit.class
+<<<<<<< HEAD
+=======
+/Method.class
+/InternalDefragmentation.class
+/ExternalDefragmentation.class
+/ContiguousExternalDefragmentation.class
+/NonContiguousExternalDefragmentation.class
+>>>>>>> 9d9a9f9882bb14de2833aea87ef9056081d4b4ae

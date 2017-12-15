@@ -14,7 +14,14 @@ public class Partition {
 		startAddress = start;
 		partitionSize = t_size;
 		reservedSize = reserved;
-		empty=true;
+		empty = true;
+	}
+
+	public Partition(int address, int size, int reserve, boolean emptyOrNot) {
+		startAddress = address;
+		partitionSize = size;
+		reservedSize = reserve;
+		empty = emptyOrNot;
 	}
 
 	public int getStartAddress() {

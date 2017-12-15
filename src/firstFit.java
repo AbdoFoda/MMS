@@ -1,13 +1,8 @@
-import java.util.ArrayList;
-
 public class firstFit implements Policy {
-
-	@Override
-	public Integer selectIndex(ArrayList<Partition> p, Integer memory_size) {
-		// TODO Auto-generated method stub
+	public Integer selectIndex(Integer memory_size) {
 		Integer ret = -1;
-		for (int i = 0; i < p.size(); ++i) {
-			if (p.get(i).isEmpty() && p.get(i).getPartitionSize() >= memory_size) {
+		for (int i = 0; i < MMS.memory.size(); ++i) {
+			if (MMS.memory.get(i).isEmpty() && MMS.memory.get(i).getPartitionSize() >= memory_size) {
 				ret = i;
 				break;
 			}
