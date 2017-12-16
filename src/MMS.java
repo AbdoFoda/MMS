@@ -2,6 +2,7 @@ import java.util.ArrayList;
 
 public class MMS {
 	public static ArrayList<Partition> memory;
+	public static Integer t_size;
 
 	public MMS() {
 		memory = new ArrayList<Partition>();
@@ -9,12 +10,27 @@ public class MMS {
 
 	public static void init(int size) {
 		memory = new ArrayList<Partition>();
-		Partition wholeMemory = new Partition(0, size, 0);
+		Partition wholeMemory = new Partition(0, t_size = size, 0);
 		memory.add(wholeMemory);
 	}
 
-	public static Integer allocate(Policy wantedPolicy, int sizeOfNeddedMomory) {
-		Integer ret = wantedPolicy.selectIndex(sizeOfNeddedMomory);
+	public static Policy callTheRightPolicy(String policy) {
+		if (policy.equals("BEST-FIT")) {
+			return new bestFit();
+		} else if (policy.equals("WORST-FIT")) {
+			return new worstFit();
+		} else {
+			return new firstFit();
+		}
+	}
+
+	public static Integer allocate(Policy wantedPolicy, int sizeOfNeededMomory) {
+		Integer ret = wantedPolicy.selectIndex(sizeOfNeededMomory);
+		if (ret != -1) {
+			MMS.memory.get(ret).setPartitionStatus(false);
+			MMS.memory.get(ret).setReservedSize(sizeOfNeededMomory);
+			ret = MMS.memory.get(ret).getStartAddress();
+		}
 		return ret;
 	}
 
@@ -36,8 +52,10 @@ public class MMS {
 			break;
 		case 2:
 			new ContiguousExternalDefragmentation().eliminatingFragmentation();
+			break;
 		case 3:
 			new NonContiguousExternalDefragmentation().eliminatingFragmentation();
+			break;
 		default:
 			System.out.println("Undefined Operation");
 			break;

@@ -1,21 +1,15 @@
-<<<<<<< HEAD
 /GUI$1.class
 /GUI$2.class
+/GUI$3.class
 /GUI.class
-=======
->>>>>>> 9d9a9f9882bb14de2833aea87ef9056081d4b4ae
+/InternalDefragmentation.class
 /MMS.class
-/Main.class
+/Method.class
+/NonContiguousExternalDefragmentation.class
 /Partition.class
 /Policy.class
 /bestFit.class
 /firstFit.class
 /worstFit.class
-<<<<<<< HEAD
-=======
-/Method.class
-/InternalDefragmentation.class
-/ExternalDefragmentation.class
-/ContiguousExternalDefragmentation.class
-/NonContiguousExternalDefragmentation.class
->>>>>>> 9d9a9f9882bb14de2833aea87ef9056081d4b4ae
+/GUI$4.class
+/GUI$5.class
